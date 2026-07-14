@@ -1,0 +1,139 @@
+include "colors.kdl"
+include "binds.kdl"
+include "animations.kdl"
+
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:caps_toggle"
+        }
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+    mouse {
+       //natural-scroll
+    }
+
+    trackpoint {
+    }
+}
+
+gestures {
+    hot-corners{
+         off
+     }
+}
+
+/-output "eDP-1" {
+    mode "1920x1080@60.030"
+    scale 2
+    transform "normal"
+    position x=1280 y=0
+}
+
+layout {
+    gaps 16
+    background-color "transparent"
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }    
+    border {
+        off
+    }
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#00000070"
+    }
+    struts {
+    }
+}
+
+    spawn-at-startup "env" "GDK_BACKEND=wayland" "waybar"
+    spawn-at-startup "awww-daemon"
+    spawn-at-startup "swaync"
+    spawn-at-startup "wallust" "history"
+    spawn-at-startup "xwayland-satellite"
+    spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "NIRI_SOCKET"
+	spawn-at-startup "wl-gammarelay-rs"
+	spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+	spawn-sh-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
+	// spawn-at-startup "sudo awg-quick up warp"
+
+hotkey-overlay {
+   skip-at-startup
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+window-rule {
+    default-column-width {}
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match app-id="^zen$"
+    open-maximized false
+}
+
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+}
+// Правило для терминала 
+window-rule {
+    match app-id="^kitty$"
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+	
+
+environment {
+    enable-xwayland
+    DISPLAY ":0"
+    MOZ_ENABLE_WAYLAND "1"    
+	GTK_THEME "adw-gtk3-dark"
+}
+
+layer-rule {
+    match namespace="^awww-daemon$"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="swaync-control-center"
+    opacity 1.0
+}
+
+layer-rule {
+    match namespace="notification"
+    opacity 1.0
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
