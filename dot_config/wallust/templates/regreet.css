@@ -1,0 +1,19 @@
+window {
+    background-color: {{background}};
+    color: {{foreground}};
+}
+
+box#container {
+    background-color: {{background}};
+}
+
+button {
+    background-color: {{color2}};
+    color: {{foreground}};
+    border-radius: 8px;
+}
+
+entry {
+    background-color: {{color1}};
+    color: {{foreground}};
+}

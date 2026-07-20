@@ -1,0 +1,36 @@
+# [core]
+# backend = "full"
+# palette = "dark"
+# check_contrast = true
+# colorspace = "lab"
+
+# kitty.template = 'kitty-colors.conf'
+# kitty.target = '~/.config/kitty/kitty-colors.conf'
+[templates]
+#
+vscodium = { template = "vscodium.json", dst = "/home/vlad/.vscode-oss/extensions/saatvik333.wallust-theme-1.1.1-universal/themes/wallust.json" }
+zed = { src = "zed.json", dst = "~/.config/zed/themes/wallust.json" }
+
+kitty = { src = "kitty.conf", dst = "/home/vlad/.config/kitty/kitty-colors.conf" }
+
+micro = { src = "micro.micro", dst = "/home/vlad/.config/micro/colorschemes/wallust.micro" }
+
+fuzzel = { src = "fuzzel.ini", dst = "/home/vlad/.config/fuzzel/colors.ini" }
+
+regreet = { src = "regreet.css", dst = "/etc/greetd/regreet.css" }
+regreet_toml = { src = "regreet.toml", dst = "/etc/greetd/regreet.toml" }
+
+niri = { src = "niri.kdl", dst = "/home/vlad/.config/niri/colors.kdl" }
+
+waybar = { src = "waybar.css", dst = "/home/vlad/.config/waybar/colors-wallust.css" }
+
+gtk3 = { src = "gtk3.css", dst = "/home/vlad/.config/gtk-3.0/gtk.css" }
+gtk4 = { src = "gtk4.css", dst = "/home/vlad/.config/gtk-4.0/gtk.css" }
+
+
+
+
+# lapce = { src = "lapce.toml", dst = "/home/vlad/.local/share/lapce-stable/themes/wallust.toml" }
+# zen = { template = "zen.css", dst = "/home/vlad/.config/zen/3ca6o5qm.Default Profile/zen-mods/wallust-theme/content.css" }
+# pywal = { template = "pywal.json", dst = "/home/vlad/.cache/wal/colors.json" }
+

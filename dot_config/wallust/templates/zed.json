@@ -1,0 +1,51 @@
+{
+  "$schema": "https://zed.dev",
+  "name": "Wallust Dynamic",
+  "author": "Wallust",
+  "themes": [
+    {
+      "name": "Wallust Dynamic",
+      "appearance": "dark",
+      "style": {
+        "border": "{{color8}}",
+        "elevated_surface.background": "{{color0}}",
+        "surface.background": "{{color0}}",
+        "background": "{{background}}",
+        "element.background": "{{color1}}",
+        "element.hover": "{{color2}}",
+        "element.active": "{{color3}}",
+        "element.selected": "{{color4}}",
+        "drop_target.background": "{{color5}}",
+        "ghost_element.background": "transparent",
+        "ghost_element.hover": "{{color1}}",
+        "ghost_element.active": "{{color2}}",
+        "ghost_element.selected": "{{color3}}",
+        "text": "{{foreground}}",
+        "text.muted": "{{color7}}",
+        "status_bar.background": "{{color0}}",
+        "title_bar.background": "{{color0}}",
+        "toolbar.background": "{{background}}",
+        "tab_bar.background": "{{color0}}",
+        "tab.active_background": "{{background}}",
+        "tab.inactive_background": "{{color0}}",
+        "editor.background": "{{background}}",
+        "editor.gutter.background": "{{background}}",
+        "editor.subheader.background": "{{color0}}",
+        "editor.active_line.background": "{{color1}}33",
+        "syntax": {
+          "comment": { "color": "{{color8}}", "font_style": "italic" },
+          "string": { "color": "{{color2}}" },
+          "number": { "color": "{{color3}}" },
+          "boolean": { "color": "{{color3}}" },
+          "property": { "color": "{{color4}}" },
+          "keyword": { "color": "{{color5}}", "font_weight": 700 },
+          "function": { "color": "{{color4}}" },
+          "type": { "color": "{{color6}}" },
+          "variable": { "color": "{{foreground}}" },
+          "variant": { "color": "{{color5}}" },
+          "embedded": { "color": "{{color6}}" }
+        }
+      }
+    }
+  ]
+}
