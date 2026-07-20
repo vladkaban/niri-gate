@@ -1,0 +1,23 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 8,
+    "modules-left": ["niri/workspaces", "clock"],
+    "modules-center": ["niri/window"],
+    "modules-right": ["pulseaudio", "tray"],
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-muted": "muted",
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "ignored-list": ["nm-applet"]
+    }
+}

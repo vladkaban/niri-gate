@@ -1,3 +1,4 @@
+// All includes
 include "colors.kdl"
 include "binds.kdl"
 include "animations.kdl"
@@ -66,7 +67,6 @@ layout {
 	spawn-at-startup "wl-gammarelay-rs"
 	spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 	spawn-sh-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
-	// spawn-at-startup "sudo awg-quick up warp"
 
 hotkey-overlay {
    skip-at-startup
@@ -100,7 +100,7 @@ window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     open-floating true
 }
-// Правило для терминала 
+
 window-rule {
     match app-id="^kitty$"
     default-column-width { proportion 0.5; }

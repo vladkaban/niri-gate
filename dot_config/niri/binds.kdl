@@ -1,15 +1,16 @@
 binds {
 
-    Mod+Shift+Slash { show-hotkey-overlay; } //Список биндов
-	Alt+P { spawn "~/.config/niri/change_theme.sh"; }	
-    Alt+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "fish" ; }
-	Mod+N { spawn "swaync-client" "-t" "-sw"; }
-    Alt+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-	Alt+Shift+D { spawn "/home/vlad/.local/bin/fuzzel-calc"; }
-	Mod+P { spawn "pavucontrol"; }
-	Mod+B { spawn "blueman-manager"; }
-	Mod+Slash { spawn "vscodium";}
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Shift+Slash { show-hotkey-overlay; } // BindList
+	Alt+P { spawn "~/.config/niri/change_theme.sh"; } // ThemeToggle	
+    Alt+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "fish" ; } // Terminal
+    Alt+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; } // Launcher
+	Alt+Shift+D { spawn "/home/vlad/.local/bin/fuzzel-calc"; } // Simple Calculator
+	Alt+R { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; } // Screenshot
+	Mod+N { spawn "swaync-client" "-t" "-sw"; } // Notification
+	Mod+P { spawn "pavucontrol"; }//Volume-manager
+	Mod+B { spawn "blueman-manager"; } // Bluetooth-manager
+	Mod+Slash { spawn "zeditor";} // Code-manager
+    Mod+Alt+L { spawn "swaylock"; }
 //Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.03+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.03-"; }
@@ -39,7 +40,6 @@ binds {
     Mod+Ctrl+K     { move-window-up; }
     Mod+Ctrl+L     { move-column-right; }
 
-	Alt+R { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; } // Скрин и запись
 	
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
