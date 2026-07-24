@@ -1,0 +1,7 @@
+filetype: text
+detect:
+    filename: "\\.txt$"
+rules:
+    - constant.string: "'.*?'"
+    - special: "\\*"
+    - constant.number: "\\b[0-9]+\\b"
